@@ -10,7 +10,16 @@ registerApplication({
   app: () => System.import("@extrascript/auth"),
   activeWhen: "/",
   customProps: {
-    domElementGetter: () => document.getElementById("auth"),
+    domElementGetter: () => document.getElementById("content"),
+  },
+});
+
+registerApplication({
+  name: "@extrascript/calendar",
+  app: () => System.import("@extrascript/calendar"),
+  activeWhen: "/calendar",
+  customProps: {
+    domElementGetter: () => document.getElementById("content"),
   },
 });
 
@@ -19,7 +28,8 @@ const lifecycles = singleSpaReact({
   ReactDOM,
   rootComponent: Root,
   errorBoundary(err, info, props) {
-    // console.log("error navigation", err, info, props);
+    // eslint-disable-next-line no-console
+    console.log("error navigation", err, info, props);
     // Customize the root error boundary for your microfrontend here.
     return null;
   },
