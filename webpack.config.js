@@ -12,6 +12,8 @@ module.exports = (webpackConfigEnv) => {
     // modify the webpack config however you'd like to by adding to this object
     externals: {
       "@extrascript/components": "@extrascript/components",
+      react: "react",
+      "react-dom": "react-dom",
     },
   });
 };
